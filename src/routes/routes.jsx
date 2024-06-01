@@ -23,7 +23,8 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:3000/shoes"),
+        loader: () =>
+          fetch("https://stride-final-project-server.vercel.app/shoes"),
       },
       {
         path: "/products/:id",
