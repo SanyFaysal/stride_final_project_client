@@ -20,13 +20,16 @@ export default function EditProfile() {
       //   email: data?.email,
     };
 
-    fetch(`http://localhost:5000/user/${data?.email}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userData),
-    })
+    fetch(
+      `https://stride-final-project-server.vercel.app/user/${data?.email}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      }
+    )
       .then((res) => res.json())
       .then((data) => console.log(data));
   };

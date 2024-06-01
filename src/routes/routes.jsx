@@ -29,7 +29,9 @@ export const router = createBrowserRouter([
         path: "/products/:id",
         element: <ProductDetails />,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/shoes/${params.id}`),
+          fetch(
+            `https://stride-final-project-server.vercel.app/shoes/${params.id}`
+          ),
       },
       {
         path: "/about",
@@ -66,7 +68,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/user/get/${params.id}`),
+          fetch(
+            `https://stride-final-project-server.vercel.app/user/get/${params.id}`
+          ),
       },
       {
         path: "all-products",
@@ -92,7 +96,9 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/shoes/${params.id}`),
+          fetch(
+            `https://stride-final-project-server.vercel.app/shoes/${params.id}`
+          ),
       },
     ],
   },

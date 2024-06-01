@@ -25,14 +25,17 @@ const EditProducts = () => {
 
     const data = { title, brand, price, description, image_url };
 
-    await fetch(`http://localhost:5000/shoes/${shoe._id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-type": "application/json",
-        authorization: `Bearer ${token}`,
-      },
-      body: JSON.stringify(data),
-    })
+    await fetch(
+      `https://stride-final-project-server.vercel.app/shoes/${shoe._id}`,
+      {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json",
+          authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      }
+    )
       .then((res) => res.json())
       .then(() => toast.success("Product updated "));
   };
